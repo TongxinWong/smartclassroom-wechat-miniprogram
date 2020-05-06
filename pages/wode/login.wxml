@@ -1,0 +1,26 @@
+<!--pages/wode/login.wxml-->
+<view class="page" style="width:100%;overflow: hidden">
+  <view style=' width: 1500rpx;height:300rpx;background: #57c3c2;border-radius: 50% / 50%;position:relative;left:-375rpx;top:-50rpx'>
+    <view style='position:relative;left:410rpx;top:60rpx'>
+    </view>
+  </view>
+
+  <view class="container" style="top:-120rpx;padding:20rpx;border-radius:30rpx">
+    <wux-notice-bar content="小程序测试默认登录密码为smartclassroom" />
+  </view>
+
+  <view class="container" style="top:-80rpx">
+    <wux-cell-group title="个人信息">
+      <wux-cell hover-class="none">
+        <wux-input label="学号" type="number" placeholder="请输入你的学号" value="{{studentID}}" bind:change="bindStudentIDInput" controlled/>
+      </wux-cell>
+      <wux-cell hover-class="none">
+        <wux-input label="密码" placeholder="请输入密码" password="true" value="{{password}}" bind:change="bindPasswordInput" controlled/>
+      </wux-cell>
+    </wux-cell-group>
+  </view>
+
+  <view class="container" style="top:-80rpx">
+    <wux-button block type="light" bind:click="login">登录</wux-button>
+  </view>
+</view>

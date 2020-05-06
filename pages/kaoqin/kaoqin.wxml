@@ -1,0 +1,59 @@
+<!--pages/kaoqin/kaoqin.wxml-->
+
+<view style="background: #57c3c2;padding:20rpx;">
+
+  <swiper class="" indicator-dots="true" autoplay="true" interval="3000" duration="1000">
+    <block wx:for="{{picList}}" wx:key="index">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" mode="aspectFill" bindtap='previewImg' data-previewurl='{{picList}}' data-currenturl='{{item}}' />
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<wux-search-bar clear maxlength="8" placeholder="搜索课程" />
+<block wx:for="{{courses}}">
+  <block wx:if="{{item.state == 0}}">
+    <view class="kecheng" style="height:160rpx; background-color:#ffcccc">
+      <view class="keming">{{item.name}}</view>
+      <view class="shijian">{{item.begin_time}}-{{item.end_time}}</view>
+      <wux-avatar size="large" src="../../images/shuohua.png" style="position:relative;top:-50rpx;left:550rpx" />
+      <view style="position:relative;top:-60rpx">
+        <wux-avatar size="small" src="../../images/shibai.png" style="position:relative;top:10rpx;left:0rpx" />
+        <text style="position:relative;left:20rpx;top:13rpx">考勤失败</text>
+      </view>
+    </view>
+  </block>
+  <block wx:elif="{{item.state == 1}}">
+    <view class="kecheng" style="height:160rpx; background-color:#ccffee">
+      <view class="keming">{{item.name}}</view>
+      <view class="shijian">{{item.begin_time}}-{{item.end_time}}</view>
+      <wux-avatar size="large" src="../../images/shuohua.png" style="position:relative;top:-50rpx;left:550rpx" />
+      <view style="position:relative;top:-60rpx">
+        <wux-avatar size="small" src="../../images/chenggong.png" style="position:relative;top:10rpx;left:0rpx" />
+        <text style="position:relative;left:20rpx;top:13rpx">考勤成功</text>
+      </view>
+    </view>
+  </block>
+  <block wx:elif="{{item.state == 2}}">
+    <view class="kecheng" style="height:160rpx; background-color:#cef9fd">
+      <view class="keming">{{item.name}}</view>
+      <view class="shijian">{{item.begin_time}}-{{item.end_time}}</view>
+      <wux-avatar size="large" src="../../images/shuohua.png" style="position:relative;top:-50rpx;left:550rpx" />
+      <view style="position:relative;top:-60rpx">
+        <wux-avatar size="small" src="../../images/wenhao.png" style="position:relative;top:10rpx;left:0rpx" />
+        <text style="position:relative;left:20rpx;top:13rpx">上课中</text>
+      </view>
+    </view>
+  </block>
+  <block wx:elif="{{item.state == 3}}">
+    <view class="kecheng" style="height:160rpx; background-color:#f0f0f4">
+      <view class="keming">{{item.name}}</view>
+      <view class="shijian">{{item.begin_time}}-{{item.end_time}}</view>
+      <wux-avatar size="large" src="../../images/shuohua.png" style="position:relative;top:-50rpx;left:550rpx" />
+      <view style="position:relative;top:-60rpx">
+        <wux-avatar size="small" src="../../images/wenhao.png" style="position:relative;top:10rpx;left:0rpx" />
+        <text style="position:relative;left:20rpx;top:13rpx">未到考勤时间</text>
+      </view>
+    </view>
+  </block>
+</block>

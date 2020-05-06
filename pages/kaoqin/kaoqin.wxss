@@ -1,0 +1,25 @@
+/* pages/kaoqin/kaoqin.wxss */
+
+.kecheng{
+  background-color:#fff;
+  margin: 20rpx;
+  padding: 30rpx;
+  border-radius: 10px
+}
+
+page{
+  background: #f9f9f9;
+}
+.slide-image{
+  width: 100%;
+}
+
+.keming{
+  font-weight: bold;
+  font-size: 35rpx
+}
+
+.shijian{
+  font-size: 30rpx;
+  color:gray;
+}

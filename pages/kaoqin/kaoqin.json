@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "智慧教室",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "wux-search-bar": "../../dist/search-bar/index",
+    "wux-wing-blank": "../../dist/wing-blank/index",
+    "wux-avatar": "../../dist/avatar/index"
+  }
+}

@@ -1,0 +1,28 @@
+<view class="page" style="width:100%;overflow: hidden">
+  <view style=' width: 1500rpx;height:300rpx;background: #57c3c2;border-radius: 50% / 50%;position:relative;left:-375rpx;top:-50rpx'>
+    <view style='position:relative;left:410rpx;top:60rpx'>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text style="font-size:45rpx;color:#fff;position:relative;top:-90rpx;left:30rpx">{{userInfo.nickName}}
+<text style="font-size:30rpx; position:relative;left:168rpx">{{stuInfo.stu_name}} {{stuInfo.stu_department}} {{stuInfo.stu_id}}</text>
+      </text>
+    </view>
+  </view>
+
+  <view class="container" style="top:-120rpx;padding:20rpx;border-radius:30rpx">
+    <wux-grids col="3" bordered="{{ false }}">
+      <wux-grid thumb="../../images/shiming.png" label="实名认证" bindtap="goToLoginPage"/>
+      <wux-grid thumb="../../images/shezhi.png" label="更多设置" />
+      <wux-grid thumb="../../images/xiaoxi.png" label="消息中心" />
+    </wux-grids>
+  </view>
+
+  <view class="container" style="top:-80rpx">
+    <wux-cell thumb="../../images/bangzhu.png" title="帮助与反馈" is-link url="/pages/index/index" open-type="switchTab"></wux-cell>
+    <wux-cell thumb="../../images/yinsi.png" title="用户协议与隐私政策" is-link url="/pages/index/index" open-type="switchTab"></wux-cell>
+    <wux-cell thumb="../../images/pingfen.png" title="去评分" is-link url="/pages/index/index" open-type="switchTab"></wux-cell>
+  </view>
+
+  <view class="container" style="top:-80rpx">
+    <wux-button block type="light" bind:click="logout">退出登录</wux-button>
+  </view>
+</view>
